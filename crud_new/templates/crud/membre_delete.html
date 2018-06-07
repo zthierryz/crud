@@ -1,0 +1,18 @@
+{% extends 'crud/base.html' %}
+
+{% block content%}
+
+<div class="vcontainer">
+<h3>Voulez vous vraiment effacer {{object}}?</h3>
+
+<br>
+
+<form method="POST" action=".">
+{% csrf_token %}
+<button class="btn btn-danger" type="submit" value="Oui. Effacer."> Oui. Effacer.</button>
+<a class="btn btn-success" href="{% url "membre_list" %}">Non. Annuler.</a>
+</form>
+
+</div>
+{% endblock content %}
+

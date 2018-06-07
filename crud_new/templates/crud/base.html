@@ -1,0 +1,39 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href = "{% static 'crud/bootstrap-4.0.0-dist/css/bootstrap.css' %}">
+     <link rel="stylesheet" type="text/css" href = "{% static 'crud/my_style.css' %}">
+    <script type="text/javascript" src = " {% static "crud/jquery-3.3.1.min.js" %}"></script>
+    <script type="text/javascript" src = "{% static "crud/bootstrap-4.0.0-dist/js/bootstrap.js" %}"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #563d7c;">
+  <!-- Navbar content -->
+  <!--<a class="navbar-brand" href="#">DeWD</a> -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="{% url 'membre_list' %}">Liste des Membres</a>
+      <a class="nav-item nav-link" href="{% url 'membre_create' %}">Nouveau Membre</a>
+    </div>
+  </div>
+</nav>	
+
+<div class='container-fluid' style='margin-top: 2em;'>	
+
+{%block content%} 
+
+{%endblock content%}
+
+</div>
+</body>
+</html>

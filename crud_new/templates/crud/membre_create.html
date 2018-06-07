@@ -1,0 +1,22 @@
+{% extends 'crud/base.html' %}
+
+{% block content %}
+
+<div class="vcontainer">
+
+	<h3>Nouveau Membre</h3>
+	<br>
+	<form action='' method="POST">
+	{% csrf_token %}
+	<table class="table-sm">
+	{{form.as_table}}
+	</table>
+	<br>
+	<div class="hcontainer">
+		<button class="btn btn-success" type="submit">Enregistrer</button>
+	</div>
+	</form>
+
+</div>
+
+{% endblock content %}

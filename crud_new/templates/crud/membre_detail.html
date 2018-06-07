@@ -1,0 +1,21 @@
+{% extends 'crud/base.html' %}
+
+{% block content %}
+
+<div class="vcontainer">
+
+	<h3>{{object}}</h3>
+	<br>
+	
+	<table class='table-sm'>
+		<tr><th>Civilité :</th><td>{{object.civilite}}</td></tr>
+		<tr><th>Nom : </th><td>{{object.nom}}</td></tr>
+		<tr><th>Prénom : </th><td>{{object.prenom}}</td></tr>
+		<tr><th>{%ifequal object.civilite 'M'%}Né le :{%else%} Née le :{% endifequal %}</th><td>{{object.date_de_naissance|default_if_none:''}}</td></tr>
+	</table>
+	<br>
+	<a class='btn btn-danger' href="{% url 'membre_delete' object.id %}">Supprimer</a>
+
+</div>
+
+{% endblock content %}

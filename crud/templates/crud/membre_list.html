@@ -1,0 +1,34 @@
+{% extends 'crud/base.html' %}
+
+{% block content %}
+
+<h1>Liste des Membres</h1>
+
+<br>
+
+<table class="table  table-bordered "> 
+	<thead class="thead-dark">
+	<tr>
+		<th>Civilité</th>
+		<th>Prénom</th>
+		<th>Nom</th>
+		<th>Date de naissance</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	{% for membre in object_list %}
+	<tr>
+		<td>{{membre.civilite}}</td>
+		<td>{{membre.prenom}}</td>
+		<td><a href="{% url 'membre_read' membre.id %}">{{membre.nom}}</a></td>
+		<td>{{membre.date_de_naissance}}</td>
+	</tr>
+	{% empty %}
+	<h3>Y a personne!</h3>
+	{% endfor %}
+	</tbody>
+</table>
+
+{% endblock content %}
+
